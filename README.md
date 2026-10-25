@@ -10,7 +10,7 @@ Projeto prático desenvolvido para a disciplina de Arquitetura de Coleta e Armaz
 ## 🏛️ Visão Geral da Arquitetura
 O ambiente utiliza armazenamento de objetos compatível com S3, tabelas abertas de alta performance e um banco relacional para consumo analítico:
 * **Landing Zone (MinIO):** Ingestão de ficheiros brutos (JSON, CSV e Parquet) via API compatível com S3.
-* **Camada Bronze (Apache Iceberg):** Persistência integral dos dados brutos com rastreabilidade de linhagem (`_ingest_ts`, `_source_file`)[cite: 3].
+* **Camada Bronze (Apache Iceberg):** Persistência integral dos dados brutos com rastreabilidade de linhagem (`_ingest_ts`, `_source_file`).
 * **Camada Silver (Apache Iceberg):** Limpeza, tipagem uniforme de dados, deduplicação e verificações de integridade.
 * **Camada Gold (Apache Iceberg):** Construção de modelos dimensionais agregados (`vendas_diarias`, `clientes_360`, `avaliacoes_resumo`).
 * **Serving Layer (PostgreSQL):** Disponibilização dos dados da camada Gold via JDBC para visualização de painéis no **Metabase**.
@@ -19,10 +19,10 @@ O ambiente utiliza armazenamento de objetos compatível com S3, tabelas abertas 
 
 ## 🛠️ Tecnologias Utilizadas
 
-* **Linguagem & Processamento:** Python 3.10[cite: 1, 2], PySpark 3.5
-* **Formato de Tabela (Lakehouse):** Apache Iceberg 1.6.1[cite: 3]
-* **Object Storage:** MinIO (Docker)[cite: 1]
-* **Base de Dados Relacional:** PostgreSQL 16 (Docker)[cite: 5]
+* **Linguagem & Processamento:** Python 3.10, PySpark 3.5, Java
+* **Formato de Tabela (Lakehouse):** Apache Iceberg 1.6.1
+* **Object Storage:** MinIO (Docker)
+* **Base de Dados Relacional:** PostgreSQL 16 (Docker)
 * **Visualização Analítica:** Metabase (Docker)
 * **Gestão de Infraestrutura:** Docker Compose
 
